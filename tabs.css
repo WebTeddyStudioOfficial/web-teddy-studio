@@ -1,6 +1,6 @@
 .tabs {
     overflow: hidden;
-    background-color: rgb(240, 248, 255, 0.7);
+    background-color: rgb(240, 248, 255, 0.3);
 	border: none;
 	height: 35px;
 	width: 100%;
@@ -11,7 +11,7 @@
     background-color: aliceblue;
     float: left;
     outline: none;
-    cursor: url('../../cursors/auto.png'), auto;
+    cursor: cursor;
     padding: 10px 15px;
 	border: none;
   }
