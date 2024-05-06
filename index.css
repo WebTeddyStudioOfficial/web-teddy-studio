@@ -1,15 +1,12 @@
 .navigation {
-	width: 98vw;
-	margin: 1vw;
-	height: 5vw;
+	width: 100vw;
 	border-radius: 5px;
-	background-color: rgb(97, 97, 97, 0.5);
-	border: rpx solid rgb(97, 97, 97, 0.1);
+	background-color: rgb(97, 97, 97, 0.7);
+	border: rpx solid rgb(97, 97, 97, 0.5);
 }
 
 .navigation a {
 	padding: 3px;
-	margin: 2vw;
 	border-radius: 5px;
 	background-color: black;
 	border: 4px solid black;
@@ -22,4 +19,9 @@
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
+}
+
+body {
+	background-image: url('bg.png');
+	background-size: 100% 500%;
 }
