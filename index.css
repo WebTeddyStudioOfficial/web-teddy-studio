@@ -1,20 +1,3 @@
-.navigation {
-	width: 100%;
-	height: fit-content;
-	border-radius: 5px;
-	background-color: rgb(97, 97, 97, 0.7);
-	border: rpx solid rgb(97, 97, 97, 0.5);
-}
-
-.navigation a {
-	padding: 3px;
-	border-radius: 5px;
-	background-color: black;
-	border: 4px solid black;
-	cursor: hand;
-	color: white;
-}
-
 .space-grotesk-webteddy {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
@@ -23,6 +6,5 @@
 }
 
 body {
-	color: white;
   	font-family: "Space Grotesk", sans-serif;
 }
