@@ -1,0 +1,18 @@
+.navigation {
+	width: 98vw;
+	margin: 1vw;
+	padding: 5px;
+	height: 5vw;
+	border-radius: 5px;
+	background-color: rgb(97, 97, 97, 0.5);
+	border: rpx solid rgb(97, 97, 97, 0.1);
+}
+
+.navigation a {
+	padding: 3px;
+	border-radius: 5px;
+	background-color: black;
+	border: 4px solid black;
+	cursor: hand;
+	color: white;
+}
