@@ -1,0 +1,32 @@
+keysToKeep = [
+	"username",
+	"password",
+	"hint",
+	"selectedIconIndex",
+	"appscripts",
+	"appstyles",
+	"appcontent",
+	"appsdesk",
+	"installedApps",
+	"appFiles",
+	"theme",
+	"quickLoadData",
+	"bg",
+	"bgtype"
+];
+systemFiles = [
+	"username",
+	"password",
+	"hint",
+	"selectedIconIndex",
+	"appscripts",
+	"appstyles",
+	"appcontent",
+	"appsdesk",
+	"installedApps",
+	"appFiles",
+	"theme",
+	"quickLoadData",
+	"bg",
+	"bgtype"
+];
