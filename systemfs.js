@@ -12,7 +12,8 @@ keysToKeep = [
 	"theme",
 	"quickLoadData",
 	"bg",
-	"bgtype"
+	"bgtype",
+	"trashcan"
 ];
 systemFiles = [
 	"username",
@@ -28,5 +29,6 @@ systemFiles = [
 	"theme",
 	"quickLoadData",
 	"bg",
-	"bgtype"
+	"bgtype",
+	"trashcan"
 ];
