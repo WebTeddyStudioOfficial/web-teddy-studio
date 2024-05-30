@@ -29,27 +29,25 @@
       <h1>ignoreUniverse</h1>
       <p>Ignore universe is a small script used to define localStorage keys that you need to be hidden from Universe's filesystem. You must include this in your website / program.</p>
       <div>
-        <h3>
-          let currentContent;
-let newContent = [];
-let hidContent = [
-    // Put your localStorage keys that you want to be hidden from the Universe filesystem here.
-];
+          let currentContent;<br>
+let newContent = [];<br>
+let hidContent = [<br>
+    // Put your localStorage keys that you want to be hidden from the Universe filesystem here.<br>
+];<br><br>
 
-function startLoad() {
-    currentContent = JSON.parse(localStorage.getItem('appFiles')) || [];
-    currentContent.forEach(function(added) {
-        newContent.push(added);
-    });
-    hidContent.forEach(function(added2) {
-        newContent.push(added2);
-    });
-    localStorage.setItem('appFiles', JSON.stringify(newContent));
-}
+function startLoad() {<br>
+    currentContent = JSON.parse(localStorage.getItem('appFiles')) || [];<br>
+    currentContent.forEach(function(added) {<br>
+        newContent.push(added);<br>
+    });<br>
+    hidContent.forEach(function(added2) {<br>
+        newContent.push(added2);<br>
+    });<br>
+    localStorage.setItem('appFiles', JSON.stringify(newContent));<br>
+} <br><br>
 
 // Please call this in your html document.
-        </h3>
-      </div>
+        </div>
     </center>
     <script src="../index.js"></script>
   </body>
