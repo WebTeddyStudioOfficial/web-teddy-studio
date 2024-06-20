@@ -1,1 +1,1 @@
-msgBox('SystemFS is going to be discontinued soon, you must update once 1.5.2 comes out to stop this message from appearing.');
+msgBox('SystemFS has been discontinued. Please update to 1.5.2 and above to stop receiving this message.');
