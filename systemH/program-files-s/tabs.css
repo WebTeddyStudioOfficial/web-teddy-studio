@@ -1,0 +1,24 @@
+.tabs {
+    overflow: hidden;
+    background-color: rgb(240, 248, 255, 0.7);
+	border: none;
+	height: 35px;
+	width: 100%;
+	font-weight: bold;
+  }
+  
+  .tablink {
+    background-color: aliceblue;
+    float: left;
+    outline: none;
+    cursor: url('../cursors/auto.png'), auto;
+    padding: 10px 15px;
+	border: none;
+  }
+  
+  .tabcontent {
+    display: none;
+    padding: 20px;
+    border: none;
+    background-color: transparent;
+  }

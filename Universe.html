@@ -1,0 +1,379 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="GroupSSalt">
+    <title>Universe</title>
+
+    <link rel="icon" type="image/x-icon" href="systemH/thumbnails/favicon.ico">
+
+	<!-- Critical Scripts -->
+	<script async src="EaseJS.js"></script>
+
+	<!-- CSS -->
+    <link rel="stylesheet" href="systemH/firmware/locator.css">
+    <link rel="stylesheet" href="systemH/program-files-s/login.css">
+    <link rel="stylesheet" href="systemH/program-files-s/tabs.css">
+    <link rel="stylesheet" href="systemH/program-files/files.css">
+    <link rel="stylesheet" href="systemH/program-files/text.css">
+	<link rel="stylesheet" href="systemH/program-files/command.css">
+	<link rel="stylesheet" href="systemH/accessibility/accall.css">
+	<link rel="stylesheet" href="systemH/accessibility/ico.css">
+	<link rel="stylesheet" href="systemH/accessibility/vman.css">
+	<link rel="stylesheet" href="systemH/services/ono.css">
+	<link rel="stylesheet" href="systemH/menuApi/menu.css">
+	<link rel="stylesheet" href="systemH/program-files-s/reg.css">
+	<link rel="stylesheet" href="systemH/system-programs/powermanager.css">
+	<link rel="stylesheet" href="systemH/program-files/calculator.css">
+</head>
+
+<body onLoad="finishLoad()">
+
+<div class="window" id="critError">
+	<div class="middlediv">
+		<img height="250" width="250" src="systemH/firmware/criticalError.png"><br>
+		<h1>Critical Error</h1>
+		<img height="50" width="50" id="criterrorlogo"><br>
+		<p id="criterrorby"></p>
+		<p id="criterrormessage"></p>
+		<button class="button" onClick="restart()">Restart</button>
+	</div>
+</div>
+
+<div class="window" id="register">
+	<div class="tabcontent" id="registerStart">
+			<div class="middlediv">
+				<h2>Create your Account</h2>
+				<img width="300" height="300" src="systemH/thumbnails/favicon.ico"><br><br>
+				<button class="button" onClick="openTab('registerUserInfo')">Let's Start</button><br><br>
+			</div>
+	</div>
+		<div class="tabcontent" id="registerUserInfo">
+			<center>
+				<div class="left">
+					<h1>Account Setup</h1>
+					<img width="250" height="250" src="systemH/thumbnails/favicon.ico"><br><br>
+				</div>
+				<div class="right">
+					<span>Username:</span><br>
+					<input class="input" id="registerUsernameInput"><br><br>
+					<span>Password:</span><br>
+					<input class="input" id="registerPasswordInput" type="password"><br><br>
+					<span>Confirm Password:</span><br>
+					<input class="input" id="registerPasswordInput2" type="password"><br><br>
+					<button class="button" onClick="registerAction('userVerify')">Verify</button><br><br>
+				</div>
+			</center>
+		</div>
+		<div class="tabcontent" id="regUserComplete">
+			<center>
+				<h1>Setup completed</h1>
+				<p class="warningBox">You can change these at any time in the settings app</p>
+				<p><b><i>5s</i></b></p>
+				<button class="button" onClick="registerAction('cancel')">Back</button>
+			</center>
+		</div>
+	</div>
+
+	<div class="window" id="logoutMenu">
+		<div class="middlediv">
+			<h1>Are you sure you want to <b>logout?</b></h1>
+			<button onClick="userLogout('confirm')" class="button">Yes</button>
+			<button onClick="userLogout('close')" class="button">No</button>
+		</div>
+	</div>
+
+	<div class="window" id="restartMenu">
+		<div class="middlediv">
+			<h1>Are you sure you want to <b>restart</b> Universe?</h1>
+			<button onClick="userRestart('confirm')" class="button">Yes</button>
+			<button onClick="userRestart('close')" class="button">No</button>
+		</div>
+	</div>
+	
+	<div class="window" id="shutdownMenu">
+		<div class="middlediv">
+			<h1>Are you sure you want to <b>shutdown</b> Universe?</h1>
+			<button onClick="userShutdown('confirm')" class="button">Yes</button>
+			<button onClick="userShutdown('close')" class="button">No</button>
+		</div>
+	</div>
+
+	<div class="askValue" id="askValue">
+    	<center>
+			<div id="saveFilesOutput" class="saveFilesOutput"></div>
+        	<p id="p2">Loading..</p>
+        	<input class="input" id="askValueInput" maxlength="25" placeholder="Max 25 Characters" type="text"><br><br>
+        	<button id="askValueButton" class="button">OK</button><br><br>
+        	<button id="askValueButton2" class="button">Cancel</button>
+    	</center>
+	</div>
+
+	<div class="ask" id="ask">
+		<center>
+			<p id="p3">Loading..</p>
+			<button id="askButton" class="button">OK</button><br><br>
+			<button id="askButton2" class="button">NO</button>
+		</center>
+	</div>
+
+	<div class="dock" id="dock">
+		<button onClick="openPowerPanel()" class="dock-accIcon"><img src="systemH/thumbnails/favicon.ico"></button>
+		<button class="dock-accicon"><img src="systemH/accessibility/acc.png" onClick="openOM(`
+			<h3>Accessibility</h3>
+			<button class='accIcon' style='width: 15%; aspect-ratio: 1 / 1;' onClick='togglefocus()'><img src='systemH/accessibility/dnd.png'></button>
+			`)"></button>
+		<button class="dock-accIcon" onClick="toggletheme()"><img src="systemH/accessibility/brightness.png"></button>
+		<input class="brightnessSlider" min="10" max="100" value="100" type="range">
+		<button class="dock-accIcon"style="float: right;" onClick="openNotiHistory()"><img src="systemH/accessibility/noti.png"></button>
+		<button class="dock-time-accIcon" id="dtime">Ti:me</button>
+		<button	class="dock-accIcon"style="float: right;"><img src="systemH/tdbApi/battery0.png" id="dbatteryIMG"></button>
+		<button class="dock-time-accIcon" id="dbattery">%</button>
+		<button class="dock-accIcon" style="float: right;" onClick="handleInactive()"><img src="systemH/accessibility/screensaver.png"></button>
+	</div>
+
+	<div class="optionMenu" id="optionMenu">
+		<center>
+			<p id="optionMenuContent">Loading..</p>
+			<button class="button" onClick="closeOM()">Close</button>
+		</center>
+	</div>
+
+	<div class="ask" id="msgBox">
+		<center>
+			<p id="msgBoxContent">Loading..</p>
+			<button class="button" onClick="closeMsgBox()">OK</button>
+		</center>
+	</div>
+
+	<div class="ask" id="sMsgBox">
+		<center>
+			<p id="sMsgBoxContent">Loading..</p>
+		</center>
+	</div>
+	
+	<div class="brightnessContainer" id="brightnessContainer"></div>
+
+	<div id="notification" class="notification">
+		<img id="noti-icon" class="noti-icon" src="" alt="App Icon">
+		<span id="noti-app-name" class="noti-app-name"></span>
+		<span id="p" class="noti-message"></span>
+		<button class="close-btn" onclick="closeNotification()">X</button>
+	</div>
+
+	<div id="customContextMenu" class="contextMenu">
+		<ul>
+			<li>Open App
+				<ul class="sublist">
+					<li onClick="openApp('settings')">Settings</li>
+					<li onClick="openApp('files')">Files</li>
+					<li onClick="openApp('textEditor')">Text</li>
+					<li onClick="openApp('command')">Command</li>
+					<li onClick="openApp('calculator')">Calculator</li>
+				</ul>
+				</li>
+			<li onClick="closeApps()">Close App</li>
+			<li onClick="userShutdown('open')">Shutdown</li>
+			<li onClick="userRestart('open')">Restart</li>
+			<li onClick="userLogout('open')">Logout</li>
+		</ul>
+	</div>
+
+    <div class="window2" id="load">
+		<div class="middlediv">
+			<img src="systemH/firmware/loadsc.gif" width="100" height="100"><br><br>
+		</div>
+    </div>
+
+	<div class="window" id="loginMenu" onClick="register()">
+		<div class="middlediv">
+			<h5 id="ldate">Date</h5>
+			<h1 id="ltime">Ti:me</h1>
+			<img id="lbatteryIMG" src="systemH/tdbApi/battery0.png" class="loginmenuimg"><br><span id="lbattery">Battery%</span>
+			<br>
+			<br>
+			<h3><i>Click anywhere to Continue</i></h3>
+		</div>
+	</div>
+
+    <div class="window" id="login">
+		<center>
+			<br><br><br><br>
+			<h1 id="usernameOutput">Loading</h1><br>
+			<input class="input" id="passwordInput" type="password"><br><br>
+			<button class="button" onClick="publicLogin()">Login</button>
+			<h3 id="h"><i>You can set a password in settings</i></h3>
+			<p id="hintOutput"></p>
+		</center>
+	</div>
+
+    <div id="deskpad" class="deskpad">
+        <button class="padIcon" onClick="openApp('settings')"><img alt="Settings" src="systemH/thumbnails/settings.png" class="padImage"></button>
+		<button class="padIcon" onClick="openApp('files')"><img alt="Files" src="systemH/thumbnails/files.png" class="padImage"></button>
+		<button class="padIcon" onClick="openApp('command')"><img alt="Command" src="systemH/thumbnails/command.png" class="padImage"></button>
+		<button class="padIcon" onClick="openApp('textEditor')"><img alt="Text Editor" src="systemH/thumbnails/text.png" class="padImage"></button>
+		<button class="padIcon" onClick="openApp('calculator')"><img alt="Calculator" src="systemH/thumbnails/calculator.png" class="padImage"></button>
+    </div>
+
+	<div class="notiPanel" id="notiPanel">
+		<div class="tabs">
+			<button class="tabaccIcon" onClick="closeNotiPanel()"><img src="systemH/accessibility/close.png"></button>
+			<button class="tabaccIcon" onClick="fullscreenNoti()"><img src="systemH/accessibility/fullscreen.png"></button>
+			<button class="tabaccIcon" onClick="openApp('settings'); openTab('notiSettings');"><img src="systemH/thumbnails/settings.png"></button>
+			<button class="tabaccIcon" onClick="clearNotis()"><img src="systemH/accessibility/delete.png"></button>
+		</div>
+		<center>
+			<br>
+			<div id="notiPanelOutput"></div>
+		</center>
+	</div>
+
+	<div class="powerPanel" id="powerPanel">
+		<div class="tabs">
+			<button class="tabaccIcon" onClick="closePowerPanel()"><img src="systemH/accessibility/close.png"></button>
+			<button class="tabaccIcon" onClick="userShutdown('open'); closePowerPanel();"><img src="systemH/accessibility/shutdown.png"></button>
+			<button class="tabaccIcon" onClick="userRestart('open'); closePowerPanel();"><img src="systemH/accessibility/restart.png"></button>
+			<button class="tabaccIcon" onClick="userLogout('open'); closePowerPanel();"><img src="systemH/accessibility/logout.png"></button>
+		</div>
+	</div>
+
+	<div class="window" id="notiApp">
+		<div class="tabs">
+			<button class="tabaccIcon" onClick="closeApp('notiApp')"><img src="systemH/accessibility/close.png"></button>
+			<button class="tabaccIcon" onClick="miniNoti()"><img src="systemH/accessibility/minimize.png"></button>
+			<button class="tabaccIcon" onClick="openApp('settings'); openTab('notiSettings');"><img src="systemH/thumbnails/settings.png"></button>
+			<button class="tabaccIcon" onClick="clearNotis()"><img src="systemH/accessibility/delete.png"></button>
+		</div>
+		<center>
+			<br>
+			<div id="notiAppOutput"></div>
+		</center>
+	</div>
+
+	<div class="window" id="settings">
+	</div>
+
+	<div class="window" id="files">
+		<div class="tabs">
+			<button class="tabaccIcon" onClick="closeApp('files')"><img src="systemH/accessibility/close.png"></button>
+			<button class="tabaccIcon" onClick="togglefullscreen()"><img src="systemH/accessibility/fullscreen.png"></button>
+			<button class="tabaccIcon" onClick="miniApp('files')"><img src="systemH/accessibility/minimize.png"></button>
+		</div>
+			<button onmouseout="resetPlaceholder()" onmouseover="filesfn('System Files')" class="files-accIcon" onClick="displaySystemFiles()"><img src="systemH/accessibility/sysfs.png"></button>
+			<button onmouseout="resetPlaceholder()" onmouseover="filesfn('User Files')" class="files-accIcon" onClick="displayLocalStorage()"><img src="systemH/thumbnails/user.png"></button>
+			<button onmouseout="resetPlaceholder()" onmouseover="filesfn('Trash')" class="files-accIcon" onClick="displayTrash()"><img src="systemH/accessibility/delete.png"></button>
+			<button onClick="emptyTrash()" class="files-text-accIcon">Empty Trash</button>
+			<button onClick="moveAllToTrash()" class="files-text-accIcon">Move all to Trash</button>
+			<button onClick="restoreAll()" class="files-text-accIcon">Restore all Files</button>
+			<b>
+			<span id="totalStorage"></span><span> /10 MB</span><br>
+			<span id="totalFiles"></span>&nbsp;<span style="color: orange;">&lt;- This includes app saves</span><br>
+			<span id="systemFiles"></span><br>
+			<span id="systemStorage"></span>&nbsp;<span style="color: orange;">&lt;- This includes apps</span>
+			</b>
+		<br>
+		<br>
+		<center>
+			<input type="search" class="input" id="filesearch" placeholder="Search" onChange="searchFiles()"><br><br>
+		</center>
+			<span class="filesPlaceholder" id="filesPlaceholder">...</span>
+			<div id="localStorageContents"></div>
+	</div>
+
+	<div class="window" id="textEditor">
+		<div class="tabs">
+			<button class="tabaccIcon" onClick="closeApp('textEditor')"><img src="systemH/accessibility/close.png"></button>
+			<button class="tabaccIcon" onClick="togglefullscreen()"><img src="systemH/accessibility/fullscreen.png"></button>
+			<button class="tabaccIcon" onClick="miniApp('textEditor')"><img src="systemH/accessibility/minimize.png"></button>
+		</div>
+<textarea spellcheck="false" id="editor" class="textEditor"></textarea>
+<br>
+			<center>
+<button class="accIcon" onClick="saveText()"><img src="systemH/accessibility/save.png"></button>
+<button class="accIcon" onClick="openApp('files')"><img src="systemH/accessibility/open.png"></button>
+<button class="accIcon" onClick="downloadText()"><img src="systemH/accessibility/download.png"></button>
+				</center>
+	</div>
+
+	<div class="window" id="command">
+		<div class="container">
+			<div id="commandOutput"></div>
+			<div class="input-container">
+			<span>Universe:/</span>
+			<input class="input-container" type="text" id="commandInput">
+			</div>
+		</div>
+	</div>
+
+	<div class="window" id="calculator">
+		<div class="tabs">
+			<button class="tabaccIcon" onClick="closeApp('calculator')"><img src="systemH/accessibility/close.png"></button>
+			<button class="tabaccIcon" onClick="togglefullscreen()"><img src="systemH/accessibility/fullscreen.png"></button>
+			<button class="tabaccIcon" onClick="miniApp('calculator')"><img src="systemH/accessibility/minimize.png"></button>
+		  </div>
+		  <div class="calculator">
+			<div class="calculator-display" id="display">0</div>
+			<div class="calculator-row">
+			  <button class="calculator-btn" onclick="calculatorClearDisplay()">C</button>
+			  <button class="calculator-btn" onclick="calculatorAppendChar('%')">%</button>
+			  <button class="calculator-btn calculator-operator" onclick="calculatorAppendChar('/')">/</button>
+			</div>
+			<div class="calculator-row">
+			  <button class="calculator-btn" onclick="calculatorAppendChar('7')">7</button>
+			  <button class="calculator-btn" onclick="calculatorAppendChar('8')">8</button>
+			  <button class="calculator-btn" onclick="calculatorAppendChar('9')">9</button>
+			  <button class="calculator-btn calculator-operator" onclick="calculatorAppendChar('*')">*</button>
+			</div>
+			<div class="calculator-row">
+			  <button class="calculator-btn" onclick="calculatorAppendChar('4')">4</button>
+			  <button class="calculator-btn" onclick="calculatorAppendChar('5')">5</button>
+			  <button class="calculator-btn" onclick="calculatorAppendChar('6')">6</button>
+			  <button class="calculator-btn calculator-operator" onclick="calculatorAppendChar('-')">-</button>
+			</div>
+			<div class="calculator-row">
+			  <button class="calculator-btn" onclick="calculatorAppendChar('1')">1</button>
+			  <button class="calculator-btn" onclick="calculatorAppendChar('2')">2</button>
+			  <button class="calculator-btn" onclick="calculatorAppendChar('3')">3</button>
+			  <button class="calculator-btn calculator-operator" onclick="calculatorAppendChar('+')">+</button>
+			</div>
+			<div class="calculator-row">
+			  <button class="calculator-btn" onclick="calculatorAppendChar('0')">0</button>
+			  <button class="calculator-btn" onclick="calculatorAppendChar('.')">.</button>
+			  <button class="calculator-btn calculator-operator" onclick="calculatorCalculate()">=</button>
+			</div>
+		  </div>
+	</div>
+
+		<!-- System Processes -->
+		<script defer src="systemH/program-files-s/sm.js"></script>
+		<script defer src="systemH/versionhandle/versionhandle.js"></script>
+		<script defer src="systemH/system-programs/powermanager.js"></script>
+		<script defer src="systemH/temp/login.tmp"></script>
+		<script defer src="systemH/temp/l-mgr.js"></script>
+		<script defer src="systemH/firmware/adac.js"></script>
+
+		<!-- System Apps -->
+		<script defer src="systemH/program-files-s/regm.js"></script>
+
+		<!-- System Services and API's -->
+		<script defer src="systemH/services/theme.js"></script>
+		<script defer src="systemH/eresets.js"></script>
+		<script defer src="systemH/tdbApi/apis.js"></script>
+		<script defer src="systemH/menuApi/menu.js"></script>
+		<script defer src="systemH/services/ono.js"></script>
+		<script defer src="systemH/program-files-s/tabs.js"></script>
+		<script defer src="systemH/accessibility/vman.js"></script>
+		<script defer src="systemH/config.js"></script>
+		<script defer src="systemH/services/userInteractive.js"></script>
+			<!-- Server Services -->
+			<script defer src="https://webteddystudioofficial.github.io/universe-versionhandle/versionhandleserver.js"></script>
+
+		<!-- Apps and Programs -->
+		<script defer src="systemH/program-files/calculator.js"></script>
+		<script defer src="systemH/render/renderSettings.js"></script>
+		<script defer src="systemH/program-files/files.js"></script>
+		<script defer src="systemH/program-files/text.js"></script>
+		<script defer src="systemH/program-files/command.js"></script>
+		<script defer src="systemH/program-files/settings.js"></script>
+</body>
+</html>

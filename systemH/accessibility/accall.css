@@ -1,0 +1,116 @@
+.accIcon {
+	width: 3%;
+	aspect-ratio: 1 / 1;
+	cursor: url('../cursors/auto.png'), auto;
+	background-color: rgb(0, 157, 209);
+	border: 2px solid rgb(0, 157, 209);
+	border-radius: 3px;
+	transition: transform 0.3s ease-in-out;
+}
+
+.dock-accIcon {
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	background-color: #85c6ff;
+	cursor: url('../cursors/auto.png'), auto;
+	border: 3px solid #85c6ff;
+	border-radius: 3px;
+    margin: 1px;
+	transition: transform 0.3s ease-in-out;
+}
+
+.dock-time-accIcon {
+	height: 100%;
+	width: fit-content;
+	background-color: #85c6ff;
+	cursor: url('../cursors/auto.png'), auto;
+	border: 3px solid #85c6ff;
+	border-radius: 3px;
+    margin: 1px;
+	transition: transform 0.3s ease-in-out;
+	float: right;
+}
+
+.dock-accIcon img {
+	width: 99%;
+	aspect-ratio: 1 / 1;
+}
+
+.accIcon img {
+	width: 95%;
+	aspect-ratio: 1 / 1;
+}
+
+.files-accIcon {
+	width: 3%;
+	aspect-ratio: 1 / 1;
+	cursor: url('../cursors/auto.png'), auto;
+	float: right;
+	background-color: rgb(0, 157, 209);
+	border: 2px solid rgb(0, 157, 209);
+	transition: transform 0.3s ease-in-out;
+}
+
+.files-text-accIcon {
+	padding: 3px;
+	font-weight: bold;
+	cursor: url('../cursors/auto.png'), auto;
+	float: right;
+	background-color: rgb(0, 157, 209);
+	border: 2px solid rgb(0, 157, 209);
+	transition: transform 0.3s ease-in-out;
+}
+
+.files-accIcon img {
+	width: 95%;
+	aspect-ratio: 1 / 1;
+}
+
+.tabaccIcon {
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	cursor: url('../cursors/auto.png'), auto;
+	background-color: transparent;
+	float: right;
+	border: none;
+}
+
+.tabaccIcon img {
+	width: 95%;
+	aspect-ratio: 1 / 1;
+}
+
+.tabaccIcon:hover {
+	background-color: red;
+}
+
+.files-section-accIcon {
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	cursor: url('../cursors/auto.png'), auto;
+	float: right;
+	border: none;
+	border-radius: 3px;
+	transition: transform 0.3s ease-in-out;
+}
+
+.files-section-accIcon img {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+}
+
+.files-section-accIcon:hover {
+	transform: scale(1.1);
+}
+
+.files-accIcon:hover {
+	transform: scale(1.1);
+}
+
+.accIcon:hover {
+	transform: scale(1.1);
+}
+
+.dock-accIcon:hover {
+	transform: scale(1.1);
+}

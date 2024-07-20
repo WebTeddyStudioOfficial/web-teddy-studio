@@ -1,0 +1,27 @@
+.notiPanel {
+    width: 25%;
+    right: 0; /* Added percentage for proper positioning */
+    position: fixed; /* Changed to fixed for better positioning */
+    top: 0%;
+    height: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    z-index: 7000; /* Ensure it's on top of other elements */
+    padding: none; /* Padding for inner spacing */
+    display: none;
+}
+
+.powerPanel {
+    width: 25%;
+    left: 0; /* Added percentage for proper positioning */
+    position: fixed; /* Changed to fixed for better positioning */
+    bottom: 65px;
+    height: 35px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    z-index: 7000; /* Ensure it's on top of other elements */
+    padding: none; /* Padding for inner spacing */
+    display: none;
+}

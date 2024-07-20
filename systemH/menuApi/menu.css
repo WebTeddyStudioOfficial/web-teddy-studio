@@ -1,0 +1,59 @@
+.contextMenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 9990;
+}
+
+.contextMenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contextMenu li {
+    padding: 10px;
+    cursor: url('../cursors/auto.png'), auto;
+}
+
+.contextMenu li:hover {
+    font-weight: bolder;
+    color: orange;
+    border: 2px solid orange;
+}
+
+.sublist {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    top: 0%;
+    left: 0;
+    z-index: 1000;
+    left: 100%;
+}
+
+li:hover .sublist {
+    display: block;
+}
+
+.menu {
+	list-style: none;
+	display: none;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 1001;
+	transform: translate(-50%, -50%);
+	color: black;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.menu li {
+	background-color: #fff;
+	border: none;
+	color: black;
+}

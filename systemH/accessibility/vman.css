@@ -1,0 +1,104 @@
+.brightnessContainer {
+    height: 200%;
+    width: 200%;
+    pointer-events: none;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+	z-index: 9999;
+}
+
+.dock {
+	right: 0.45vw;
+    position: fixed;
+    bottom: 3;
+	background-color: rgb(194, 226, 255, 0.7);
+	border: 3px solid rgb(194, 226, 255, 0.5);
+	padding: 5px;
+	z-index: 10;
+	height: 37px;
+	width: 98vw;
+	display: none;
+	border-radius: 5px;
+}
+
+.dock input {
+    cursor: url('../cursors/auto.png'), auto;
+}
+
+.askValue {
+	position: fixed;
+	width: 50vw;
+	background-color: rgb(211, 211, 211, 0.8);
+	border: 3px solid #3d3d3d;
+	padding: 3px;
+	z-index: 1000;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	display: none;
+	border-radius: 5px;
+}
+
+.askValue .files-section {
+	width: 100%;
+}
+
+.ask .files-section {
+	width: 100%;
+}
+
+.askValue .button {
+	border: 3px solid #3d3d3d;
+	background-color: #3d3d3d;
+}
+
+.askValue .input {
+	border: 3px solid #3d3d3d;
+	background-color: #3d3d3d;
+}
+
+.askValue .files-section {
+	background-color: #696969;
+	border: 2px solid #696969;
+	color: white;
+	float: none;
+}
+
+.ask {
+	position: fixed;
+	width: 50vw;
+	background-color: rgb(211, 211, 211, 0.8);
+	border: 3px solid #3d3d3d;
+	padding: 3px;
+	z-index: 2000;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	border-radius: 5px;
+}
+
+.ask .button {
+	border: 3px solid #3d3d3d;
+	background-color: #3d3d3d;
+}
+
+.ask .input {
+	border: 3px solid #3d3d3d;
+	background-color: #3d3d3d;
+}
+
+.optionMenu {
+	position: fixed;
+	width: 30%;
+	aspect-ratio: 1 / 1;
+	background-color: rgb(211, 211, 211, 0.8);
+	border: 3px solid #3d3d3d;
+	padding: 3px;
+	z-index: 3000;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+}
